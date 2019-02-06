@@ -10,14 +10,22 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *inputField;
+@property (weak, nonatomic) IBOutlet UIButton *convertButton;
+@property (weak, nonatomic) IBOutlet UILabel *currencyEuro;
+@property (weak, nonatomic) IBOutlet UILabel *currencyPound;
+@property (weak, nonatomic) IBOutlet UILabel *currencyYen;
+
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+- (IBAction)buttonTapped:(id)sender {
+    self.convertButton.enabled = NO;
+    self.currencyEuro.text = @"Euro";
+    self.currencyPound.text = @"Pound";
+    self.currencyYen.text = @"Yen";
+    self.convertButton.enabled = YES;
 }
-
 
 @end
